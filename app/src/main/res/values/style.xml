@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="style_btn">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/hanbit</item>
+    </style>
+
+    <style name="style_bold" parent="style_btn">
+        <item name="paddingStart">3dp</item>
+    </style>
+
+    <style name="style_normal">
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/suite_regular</item>
+
+    </style>
+
+</resources>
