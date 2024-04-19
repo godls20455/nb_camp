@@ -3,6 +3,8 @@ package com.example.applemarket.presentation
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.applemarket.data.DataSource
 import com.example.applemarket.data.Goods
@@ -26,8 +28,15 @@ class MainActivity : AppCompatActivity() {
         val dataSource = DataSource.getDataSource()
         myAdapter.goodsList = dataSource.getDataList()
 
-        binding.rv.adapter = myAdapter
-        binding.rv.layoutManager = LinearLayoutManager(this)
+//        binding.rv.adapter = myAdapter
+//        binding.rv.layoutManager = LinearLayoutManager(this)
+        binding.rv.apply {
+            adapter = myAdapter
+            layoutManager = LinearLayoutManager(context)
+            setHasFixedSize(true)
+            addItemDecoration(DividerItemDecoration(context, LinearLayout.VERTICAL))
+        }
+    }
 
     private fun adapterOnClick(goods: Goods) {
         val intent = Intent(this, DetailActivity::class.java)
